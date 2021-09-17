@@ -1,9 +1,8 @@
-import Router from "express";
 import Restaurant from "../models/restaurant.js";
 
 export async function getAll(req, res) {
   try {
-    const result = await Restaurant.find().populate("city").populate("tag");
+    const result = await Restaurant.find();
     res.json(result);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -14,9 +13,32 @@ export async function getOneByID(request, response) {
   try {
     const { query } = request.params;
     console.log(query);
-    // const query = { id: "610c65326b673783aff3b76d" };
-    const result = await Restaurant.findOne(query).populate("restaurant");
-    // console.log(query.cuisine);
+    const result = await Restaurant.findOne(query);
+    console.log(result);
+    response.json(result);
+  } catch (error) {
+    response.status(500).json({ message: error.message });
+  }
+}
+export async function getAllByCity(request, response) {
+  try {
+    const city = request.params.city;
+
+    console.log(city);
+    const result = await Restaurant.find({
+      city: city,
+    });
+    response.json(result);
+  } catch (error) {
+    response.status(500).json({ message: error.message });
+  }
+}
+
+export async function getAllByTag(request, response) {
+  try {
+    const result = await Restaurant.find({
+      tag: request.params.tag,
+    });
     response.json(result);
   } catch (error) {
     response.status(500).json({ message: error.message });
@@ -24,9 +46,7 @@ export async function getOneByID(request, response) {
 }
 
 export async function createOne(request, response) {
-  console.log("Am i here .....15");
   try {
-    console.log("Am i here .....15");
     const newRestaurant = await Restaurant.create(request.body);
     response.json(newRestaurant);
   } catch (error) {

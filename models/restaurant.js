@@ -2,8 +2,8 @@ import mongoose from "mongoose";
 
 const RestaurantSchema = new mongoose.Schema({
   restaurant_name: { type: String },
-  city: { type: mongoose.Schema.Types.ObjectId, ref: "city" },
-  tag: { type: mongoose.Schema.Types.ObjectId, ref: "tag" },
+  city: { type: String },
+  tag: { type: String },
   price_range: { type: String },
   lat: { type: Number },
   lnt: { type: Number },
