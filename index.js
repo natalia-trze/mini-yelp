@@ -10,6 +10,10 @@ import tagsRouter from "./routes/tag.js";
 import connectToDatabase from "./models/index.js";
 
 
+<<<<<<< HEAD
+app.use(express.json());
+app.use(cors());
+=======
   const PORT = process.env.PORT || 8080;
   var app = express();
   
@@ -26,5 +30,6 @@ import connectToDatabase from "./models/index.js";
       console.log("server is running on" + " " + `http://localhost:${PORT}`);
     });
   });
+>>>>>>> main
 
 
