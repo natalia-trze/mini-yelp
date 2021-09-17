@@ -10,7 +10,6 @@ import {
 const restaurantsRouter = Router();
 
 restaurantsRouter.route("/").get(getAll).post(createOne);
-
 restaurantsRouter.route("/:id").get(getOneByID);
 restaurantsRouter.route("/city/:city").get(getAllByCity);
 restaurantsRouter.route("/tag/:tag").get(getAllByTag);

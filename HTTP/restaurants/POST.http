@@ -2,14 +2,14 @@ POST http://localhost:5000/restaurants
 Content-Type: application/json
 
 {
-    "restaurant_name": "Nourriture",
-    "city": "613a75ece8fbec2dffa9da98",
+    "restaurant_name": "FatBurger",
+    "city": "613c6e7bfd82b7728eec6027",
     "tag": "613a7a289641bc46c482dbb2",
-    "price_range": "premium",
-    "lat": 55.00,
-    "lnt": 89.009,
-    "phone": "1234567343434",
-    "image": "https://blablabla.com",
-    "rating": "5/10",
-    "website": "https://blablabla.com"
+    "price_range": "cheap",
+    "lat": 34.0522,
+    "lnt": 118.2437,
+    "phone": "012 123 123",
+    "image": "https://images.squarespace-cdn.com/content/v1/5dc06b43e6229c77b655f005/1572895845640-JPS5X1YGITYIM09LM4WF/FBP7.png?format=1500w",
+    "rating": "9/10",
+    "website": "https://fatburger.com/"
   }
